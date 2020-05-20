@@ -1,8 +1,2 @@
 language: java
-jdk:
-  - openjdk8
-  - openjdk11
-  - openjdk-ea
-  - oraclejdk8
-  - oraclejdk11
-  - oraclejdk-ea
+install: ant deps
