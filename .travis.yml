@@ -12,7 +12,7 @@ before_script:
 
 addons:
   sonarcloud:
-  organization: ""
+  organization: "adrchacon"
     token:
       secure: 630f4c03fee0eb8db511a120415056527d881b8c # encrypted value of your token
 script:
