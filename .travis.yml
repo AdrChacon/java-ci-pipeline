@@ -3,7 +3,6 @@ jdk:
 - oraclejdk14
 
 script: ant all
-script: ant sonar
 
 before_script:
    - sudo apt-get install ant-optional
