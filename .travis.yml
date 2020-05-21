@@ -5,4 +5,4 @@ jdk:
 script: ant clean
 script: ant compile
 script: ant jar
-script: ant junit
+script: ant -lib ./lib junit
