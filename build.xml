@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="Calculator" basedir="." >
+<project name="Calculator" basedir="."  xmlns:sonar="antlib:org.sonar.ant">
 	
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="build"/>
 	<property name="classes.dir" value="${build.dir}/classes"/>
 	<property name="jar.dir" value="${build.dir}/jar"/>
 	<property name="lib.dir" value="lib"/>
+	
+	<property name="sonar.host.url" value="http://localhost:9000" />
+	
+	<property name="sonar.projectKey" value="calculator123"/>
+	<property name="sonar.projectName" value="Calculator"/>
+	<property name="sonar.projectVersion" value="1.0"/>
+	<property name="sonar.sources" value="src"/>
+	<property name="sonar.binaries" value="build"/>
+	<property name="sonar.sourceEncoding" value="UTF-8"/>
 	
 	<path id="classpath">
 		<fileset dir="${lib.dir}" includes="**/*.jar"/>
@@ -40,6 +49,14 @@
 		</junit>
 	</target>
 	
+	<target name="sonar" depends="compile">
+		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+			<classpath path="${lib.dir}/sonarqube-ant-task-2.7.0.1612.jar"/>
+		</taskdef>
+		
+		<sonar:sonar />
+	</target>
 	
+	<target name="all" depends="clean,compile,jar,junit"/>
 	<target name="clean-build" depends="clean,jar"/>
 </project>
