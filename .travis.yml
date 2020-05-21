@@ -14,7 +14,7 @@ addons:
   sonarcloud:
   organization: "adrchacon"
     token:
-      secure: 630f4c03fee0eb8db511a120415056527d881b8c # encrypted value of your token
+      secure: $SONAR_TOKEN # encrypted value of your token
 script:
   # other script steps might be done before running the actual analysis
   - sonar-scanner
