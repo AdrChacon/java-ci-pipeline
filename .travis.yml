@@ -1,7 +1,6 @@
 language: java
 jdk:
 - oraclejdk14
-install: ant deps
 
 script: ant clean
 script: ant compile
