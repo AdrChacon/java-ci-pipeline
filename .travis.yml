@@ -5,4 +5,7 @@ jdk:
 script: ant clean
 script: ant compile
 script: ant jar
-script: ant -lib ./lib junit
+script: ant junit
+
+before_script:
+   - sudo apt-get install ant-optional
