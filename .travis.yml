@@ -9,3 +9,11 @@ script: ant junit
 
 before_script:
    - sudo apt-get install ant-optional
+
+addons:
+  sonarcloud:
+    token:
+      secure: SONAR_TOKEN # encrypted value of your token
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
